@@ -28,7 +28,14 @@ export function listenCommand(module, regex, handler) {
   }
   
   // init handler data
-  handler[LELOUCH_DATA] = {
+  const handlerData = {
+    _rawHandler: message => {
+      const res = regex.exec(message.content)
+      if (!res)
+        return
+
+      handler.apply(module, [message, ...res.slice(1)])
+    },
     get module() {
       return module
     },
@@ -39,6 +46,9 @@ export function listenCommand(module, regex, handler) {
       return handler
     }
   }
+  handler[LELOUCH_DATA] = handlerData
 
+  // adding listener
+  migi.listen(module, 'message', handlerData._rawHandler)
   migi.emit('commandAdd', module, regex, handler)
 }
