@@ -1,0 +1,38 @@
+{
+  "name": "lelouch",
+  "version": "1.0.0",
+  "description": "Command lib for Migi",
+  "main": "lib",
+  "scripts": {
+    "build": "rimraf lib && babel src -d lib",
+    "prepack": "npm run build",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Popcorn-moe/lelouch.git"
+  },
+  "keywords": [
+    "migi",
+    "command",
+    "lelouch",
+    "suzaku"
+  ],
+  "author": "Popcorn.moe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Popcorn-moe/lelouch/issues"
+  },
+  "homepage": "https://github.com/Popcorn-moe/lelouch#readme",
+  "peerDependencies": {
+    "@popcorn.moe/migi": "git+https://github.com/SkyBeastMC/migi.git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/node": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "prettier": "^1.12.1",
+    "rimraf": "^2.6.2"
+  }
+}
