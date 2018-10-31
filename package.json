@@ -1,12 +1,18 @@
 {
-  "name": "lelouch",
+  "name": "@popcorn.moe/lelouch",
   "version": "1.0.0",
   "description": "Command lib for Migi",
   "main": "lib",
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "build": "rimraf lib && babel src -d lib",
     "prepack": "npm run build",
-    "format": "prettier --write \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.js\"",
+    "playground": "npm run build && cd dev && npm run start"
   },
   "repository": {
     "type": "git",
